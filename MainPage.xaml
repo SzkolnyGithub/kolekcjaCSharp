@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="waznalekcja4cBadowski.MainPage">
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding People}"
+                  ItemSelected="Roznica">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Age}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label 
+            x:Name="blad"
+            FontSize="20"/>
+        <Entry 
+            x:Name="imie"
+            FontSize="20"
+            Placeholder="Podaj imie osoby"/>
+        <Entry 
+            x:Name="wiek"
+            Placeholder="Podaj wiek osoby"
+            FontSize="20"
+            Keyboard="Numeric"/>
+        <Button 
+            Clicked="Dodaj"
+            Padding="15"
+            Text="Dodaj osobę"/>
+    </StackLayout>
+</ContentPage>
